@@ -1,0 +1,23 @@
+{
+  "name": "wow",
+  "version": "1.0.0",
+  "description": "A sleek, responsive portfolio website with a black and gold theme showcasing my skills, projects, and professional information.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahsan6786/final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahsan6786/final/issues"
+  },
+  "homepage": "https://github.com/Ahsan6786/final#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
