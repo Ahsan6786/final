@@ -417,87 +417,195 @@ body {
         padding: 0.5rem 0;
     }
     
+    nav .container {
+        padding: 0.5rem 1rem;
+    }
+    
     /* Improved hero section for mobile */
     #home h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
         line-height: 1.2;
     }
     
     #home h2 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
+    }
+    
+    #home p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
     }
     
     .profile-image-container {
         width: 220px;
         height: 220px;
         margin: 0 auto;
+        margin-top: 2rem;
     }
     
     /* Better spacing for mobile */
     section {
-        padding: 4rem 1rem;
+        padding: 3.5rem 0.75rem;
+    }
+    
+    section .container {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    section h2 {
+        font-size: 1.75rem;
+    }
+    
+    section p {
+        font-size: 0.95rem;
     }
     
     /* Adjusted grid layouts for mobile */
     .grid-cols-3 {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
     }
     
     /* Improved button sizes for mobile touch */
     .btn-primary, .btn-secondary {
-        padding: 0.75rem 1.25rem;
+        padding: 0.625rem 1.125rem;
         font-size: 0.95rem;
         margin-bottom: 0.5rem;
+        min-width: 120px;
+        text-align: center;
     }
     
     /* Chatbot adjustments for mobile */
     #chatbot-container {
-        bottom: 1.25rem;
-        right: 1.25rem;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    #chatbot-toggle {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+    
+    #chatbot-toggle i {
+        font-size: 1.5rem;
     }
     
     #chatbot-panel {
-        width: calc(100vw - 2.5rem);
+        width: calc(100vw - 2rem);
         max-width: 320px;
         right: 0;
+        bottom: 5rem;
+    }
+
+    /* Testimonial improvements */
+    .testimonial-slide {
+        padding: 1.25rem;
+    }
+
+    .testimonial-slide .flex {
+        flex-direction: column;
+    }
+
+    .testimonial-slide .w-24 {
+        margin: 0 auto 1rem auto;
+    }
+
+    /* Project card improvements */
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+
+    .project-card .h-48 {
+        height: 10rem;
+    }
+
+    .project-card .p-6 {
+        padding: 1.25rem;
+    }
+
+    /* Skills section improvements */
+    .skill-progress {
+        margin-bottom: 1rem;
+    }
+
+    /* Fix for service cards */
+    .service-card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .service-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+
+    /* Contact form improvements */
+    #contactForm .input-field {
+        margin-bottom: 0.75rem;
+    }
+
+    /* Fix for overlapping navigation */
+    .nav-link {
+        margin: 0 0.5rem;
     }
 }
 
 /* Extra small device optimizations */
 @media (max-width: 480px) {
-    /* Adjusted grid layouts for very small screens */
+    /* Enhanced layout for very small screens */
     .grid-cols-3, .grid-cols-2 {
         grid-template-columns: 1fr;
     }
     
     /* Smaller font sizes for mobile */
     h2 {
-        font-size: 1.75rem !important;
+        font-size: 1.5rem !important;
     }
     
     h3 {
-        font-size: 1.35rem !important;
+        font-size: 1.25rem !important;
     }
     
     p {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
     }
     
     /* Improved spacing for very small screens */
     .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    
+    /* Hero section on very small screens */
+    #home h1 {
+        font-size: 2rem !important;
+    }
+    
+    #home .btn-primary, 
+    #home .btn-secondary {
+        width: 100%;
+        margin-bottom: 0.75rem;
     }
     
     /* Project cards adjusted for mobile */
     .project-card {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+    
+    .project-card .p-6 {
+        padding: 1rem;
+    }
+    
+    .project-card h3 {
+        font-size: 1.1rem !important;
     }
     
     /* Better form elements for mobile */
     .input-field {
-        padding: 0.65rem 0.85rem;
-        font-size: 0.95rem;
+        padding: 0.625rem 0.875rem;
+        font-size: 0.9rem;
     }
     
     /* Adjusted profile image for smaller screens */
@@ -512,8 +620,129 @@ body {
     }
     
     /* Full width buttons on very small screens */
-    #contactForm .btn-primary {
+    #contactForm .btn-primary,
+    .btn-primary,
+    .btn-secondary {
         width: 100%;
+        margin-right: 0;
+    }
+    
+    /* Fix for statistics on mobile */
+    .grid-cols-2.md\:grid-cols-4 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.75rem;
+    }
+    
+    .counter-value {
+        font-size: 1.75rem !important;
+    }
+    
+    /* Smaller social icons for mobile */
+    .social-icon {
+        width: 2.25rem;
+        height: 2.25rem;
+        font-size: 1rem;
+    }
+    
+    /* Fix spacing between sections */
+    section {
+        padding: 3rem 0.5rem;
+    }
+    
+    /* Fix contact section on mobile */
+    #contact .space-x-6 {
+        gap: 0.5rem;
+    }
+    
+    /* Better mobile menu button */
+    .md\:hidden.fixed.top-4.right-16 {
+        top: 0.75rem;
+        right: 3.5rem;
+    }
+}
+
+/* Even smaller devices (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 360px) {
+    .profile-image-container {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #home h1 {
+        font-size: 1.75rem !important;
+    }
+    
+    #home h2 {
+        font-size: 1.1rem !important;
+    }
+    
+    .grid-cols-2.md\:grid-cols-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .counter-value {
+        font-size: 1.5rem !important;
+    }
+    
+    .social-icon {
+        width: 2rem;
+        height: 2rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Ensure buttons are visible and tappable */
+    .btn-primary, .btn-secondary {
+        padding: 0.625rem 0.75rem;
+        min-height: 44px; /* Minimum recommended tap target size */
+    }
+    
+    /* Fix for overflow issues */
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+}
+
+/* Ensure proper tap target sizes for better UX */
+@media (max-width: 768px) {
+    /* All interactive elements should be at least 44x44px for easy tapping */
+    button, a, input, .nav-link, .social-icon, #theme-toggle {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    /* Improve spacing between tap targets */
+    .space-x-6 {
+        gap: 0.75rem;
+    }
+    
+    /* Fix mobile menu */
+    .fixed.inset-0.bg-black.bg-opacity-95.z-40 a {
+        padding: 0.75rem 1.5rem;
+        margin: 0.25rem 0;
+        width: 80%;
+        text-align: center;
+        border-radius: 0.5rem;
+    }
+    
+    /* Fix mobile chatbot toggle */
+    #chatbot-toggle {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    /* Ensure proper spacing in menu */
+    nav .container {
+        justify-content: space-between;
+    }
+
+    /* Adjust form elements for better touch */
+    textarea {
+        min-height: 100px;
     }
 }
 

@@ -250,30 +250,32 @@ function initChatbot() {
 function initMobileMenu() {
     // Create mobile menu elements
     const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.className = 'md:hidden fixed top-4 right-16 z-50 bg-black p-3 rounded-full border border-gold-500/30';
+    mobileMenuButton.className = 'md:hidden fixed top-4 right-16 z-50 bg-black p-3 rounded-full border border-gold-500/30 shadow-lg';
     mobileMenuButton.innerHTML = '<i class="fas fa-bars text-gold-400 text-xl"></i>';
+    mobileMenuButton.setAttribute('aria-label', 'Toggle mobile menu');
     document.body.appendChild(mobileMenuButton);
     
     const mobileMenu = document.createElement('div');
-    mobileMenu.className = 'fixed inset-0 bg-black bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden';
+    mobileMenu.className = 'fixed inset-0 bg-black bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-6 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden';
+    mobileMenu.setAttribute('aria-hidden', 'true');
     
     // Get navigation links and add them to mobile menu
     const navLinks = document.querySelectorAll('nav .hidden.md\\:flex a');
     navLinks.forEach(link => {
         const newLink = link.cloneNode(true);
-        newLink.className = 'text-2xl font-bold text-white hover:text-gold-400 transition duration-300 py-3 px-6 rounded-lg hover:bg-black/30';
+        newLink.className = 'text-xl font-bold text-white hover:text-gold-400 transition duration-300 py-3 px-6 rounded-lg hover:bg-black/30 w-4/5 text-center';
         mobileMenu.appendChild(newLink);
     });
     
     // Add brand/logo to mobile menu
     const brandLogo = document.createElement('div');
-    brandLogo.className = 'text-3xl font-bold gradient-text mb-8';
+    brandLogo.className = 'text-3xl font-bold gradient-text mb-6 mt-4';
     brandLogo.innerHTML = '&lt;Ahsan/&gt;';
     mobileMenu.insertBefore(brandLogo, mobileMenu.firstChild);
     
     // Add social links to mobile menu
     const socialContainer = document.createElement('div');
-    socialContainer.className = 'flex space-x-4 mt-4';
+    socialContainer.className = 'flex space-x-4 mt-6';
     
     const socialLinks = [
         { icon: 'github', url: 'https://github.com/Ahsan6786' },
@@ -298,22 +300,68 @@ function initMobileMenu() {
     
     // Add a close button within the menu
     const closeButton = document.createElement('button');
-    closeButton.className = 'absolute top-6 right-6 text-white hover:text-gold-400 transition duration-300';
+    closeButton.className = 'absolute top-6 right-6 text-white hover:text-gold-400 transition duration-300 p-3';
     closeButton.innerHTML = '<i class="fas fa-times text-2xl"></i>';
+    closeButton.setAttribute('aria-label', 'Close mobile menu');
     mobileMenu.appendChild(closeButton);
+
+    // Add overlay backdrop
+    const menuBackdrop = document.createElement('div');
+    menuBackdrop.className = 'absolute inset-0 bg-black opacity-80 -z-10';
+    mobileMenu.appendChild(menuBackdrop);
     
     document.body.appendChild(mobileMenu);
+
+    // Add swipe gesture support
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    mobileMenu.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    mobileMenu.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipeGesture();
+    });
+    
+    function handleSwipeGesture() {
+        // Detect right to left swipe to close menu
+        if (touchEndX < touchStartX - 50) {
+            closeMenu();
+        }
+    }
     
     // Toggle menu visibility
     mobileMenuButton.addEventListener('click', function() {
         if (mobileMenu.classList.contains('translate-x-full')) {
-            mobileMenu.classList.remove('translate-x-full');
-            mobileMenuButton.innerHTML = '<i class="fas fa-times text-gold-400 text-xl"></i>';
-            document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+            openMenu();
         } else {
             closeMenu();
         }
     });
+    
+    // Open menu function
+    function openMenu() {
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'false');
+        mobileMenuButton.innerHTML = '<i class="fas fa-times text-gold-400 text-xl"></i>';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
+        
+        // Add animation to menu items
+        const menuItems = mobileMenu.querySelectorAll('a, .gradient-text');
+        menuItems.forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+            item.style.transitionDelay = `${index * 0.1}s`;
+            
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0)';
+            }, 50);
+        });
+    }
     
     // Close menu on close button click
     closeButton.addEventListener('click', closeMenu);
@@ -326,6 +374,7 @@ function initMobileMenu() {
     // Function to close the menu
     function closeMenu() {
         mobileMenu.classList.add('translate-x-full');
+        mobileMenu.setAttribute('aria-hidden', 'true');
         mobileMenuButton.innerHTML = '<i class="fas fa-bars text-gold-400 text-xl"></i>';
         document.body.style.overflow = ''; // Re-enable scrolling
     }
@@ -341,6 +390,31 @@ function initMobileMenu() {
     window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) { // md breakpoint
             closeMenu();
+        }
+    });
+
+    // Add active state to current section in mobile menu
+    window.addEventListener('scroll', function() {
+        // Only update if mobile menu is visible
+        if (!mobileMenu.classList.contains('translate-x-full')) {
+            const scrollPosition = window.scrollY;
+            const sections = document.querySelectorAll('section[id]');
+            const mobileLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    mobileLinks.forEach(link => {
+                        link.classList.remove('bg-black/30', 'text-gold-400');
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('bg-black/30', 'text-gold-400');
+                        }
+                    });
+                }
+            });
         }
     });
 }
