@@ -550,9 +550,14 @@ body {
     .nav-link {
         margin: 0 0.5rem;
     }
+
+    /* Role text container with fixed height to prevent jerky movement */
+    .role-text {
+        min-height: 2em; /* Slightly taller on mobile to accommodate two lines if needed */
+        margin-bottom: 1rem;
+    }
 }
 
-/* Extra small device optimizations */
 @media (max-width: 480px) {
     /* Enhanced layout for very small screens */
     .grid-cols-3, .grid-cols-2 {
@@ -658,6 +663,11 @@ body {
     .md\:hidden.fixed.top-4.right-16 {
         top: 0.75rem;
         right: 3.5rem;
+    }
+
+    /* Role text container with fixed height to prevent jerky movement */
+    .role-text {
+        min-height: 2.5em; /* Even taller on smaller screens */
     }
 }
 
@@ -1405,4 +1415,33 @@ section {
 /* Remove floating animation from profile container in hero section */
 #home .md\:w-1\/2.flex.justify-center.md\:justify-end {
     animation: none !important;
+}
+
+/* Role text container with fixed height to prevent layout shifts */
+.role-text {
+    display: block;
+    min-height: 1.5em;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.5rem; /* Consistent margin to prevent layout shifts */
+}
+
+/* Typing text styling */
+.typing-text {
+    display: inline-block;
+    position: relative;
+}
+
+.typing-text::after {
+    content: '|';
+    display: inline-block;
+    margin-left: 2px;
+    opacity: 1;
+    animation: blink 0.7s infinite;
+    color: var(--gold-primary);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 } 

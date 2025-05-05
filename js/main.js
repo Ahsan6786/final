@@ -731,6 +731,10 @@ function initTypingEffect() {
         'Blockchain Developer'
     ];
     
+    // Create a wrapper for the typing text to prevent layout shifts
+    roleElement.innerHTML = '<span class="typing-text"></span>';
+    const typingText = roleElement.querySelector('.typing-text');
+    
     let roleIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
@@ -742,12 +746,12 @@ function initTypingEffect() {
         
         if (isDeleting) {
             // Deleting text
-            roleElement.textContent = currentRole.substring(0, charIndex - 1);
+            typingText.textContent = currentRole.substring(0, charIndex - 1);
             charIndex--;
             typingSpeed = 50; // Faster when deleting
         } else {
             // Typing text
-            roleElement.textContent = currentRole.substring(0, charIndex + 1);
+            typingText.textContent = currentRole.substring(0, charIndex + 1);
             charIndex++;
             typingSpeed = 100; // Normal speed when typing
         }
