@@ -215,7 +215,7 @@ function initChatbot() {
             appendAIMessage("Ahsan is a B.Tech Computer Science student at MIT-WPU. He's passionate about coding and continuously learning new technologies.");
         } 
         else if (userInput.includes('experience') || userInput.includes('work history') || userInput.includes('job')) {
-            appendAIMessage("Ahsan has experience developing various web applications and blockchain solutions. He focuses on creating elegant, efficient, and user-friendly applications. Would you like to know more about his specific projects?");
+            appendAIMessage("Ahsan has 1 year of experience developing various web applications. He focuses on creating elegant, efficient, and user-friendly solutions. Would you like to know more about his specific projects?");
         } 
         else if (userInput.includes('location') || userInput.includes('where') || userInput.includes('live') || userInput.includes('from')) {
             appendAIMessage("Ahsan is based in Maharashtra, India.");
