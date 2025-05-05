@@ -83,51 +83,51 @@ body {
 }
 
 .light-mode {
-    --bg-color: #f0e8d1;
-    --text-color: var(--black-primary);
-    background-color: #f0e8d1;
-    color: #111;
+    --bg-color: #f5f1e6;
+    --text-color: #333333;
+    background-color: #f5f1e6;
+    color: #333333;
 }
 
 .light-mode .bg-black {
-    background-color: #f0e8d1;
+    background-color: #f5f1e6;
 }
 
 .light-mode .bg-gray-900 {
-    background-color: #808080;
+    background-color: #e9e4d5;
 }
 
 .light-mode .text-white {
-    color: #111;
+    color: #333333;
 }
 
 .light-mode .text-gray-300 {
-    color: #333;
+    color: #444444;
 }
 
 .light-mode .text-gray-400 {
-    color: #555;
+    color: #555555;
 }
 
 .light-mode .border-gold-600\/30 {
-    border-color: rgba(212, 175, 55, 0.3);
+    border-color: rgba(175, 140, 35, 0.3);
 }
 
 .light-mode .bg-gray-800 {
-    background-color: #d5d5d5;
+    background-color: #e0daca;
 }
 
 .light-mode .project-card, 
 .light-mode .skill-card,
 .light-mode .service-card {
-    background-color: rgba(226, 215, 181, 0.7);
-    border-color: rgba(175, 140, 55, 0.3);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #f9f6ed;
+    border-color: rgba(175, 140, 35, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .light-mode .social-icon {
-    background-color: #e0e0e0;
-    color: #333;
+    background-color: #f9f6ed;
+    color: #555555;
 }
 
 /* Fix button visibility in light mode */
@@ -138,7 +138,7 @@ body {
 }
 
 .light-mode .btn-secondary {
-    color: #333;
+    color: #333333;
     font-weight: 700;
 }
 
@@ -896,18 +896,18 @@ section {
 
 /* Light Mode Skill Bars */
 .light-mode .skill-progress .h-3.bg-gray-800 {
-    background-color: #d0d0d0;
+    background-color: #e0daca;
     box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Light Mode Styles for New Elements */
 .light-mode .testimonial-slide {
-    background-color: #f0f0f0;
-    border-color: rgba(175, 140, 55, 0.3);
+    background-color: #f9f6ed;
+    border-color: rgba(175, 140, 35, 0.3);
 }
 
 .light-mode .testimonial-slide p {
-    color: #333;
+    color: #444444;
 }
 
 .light-mode .counter-value {
@@ -915,7 +915,36 @@ section {
 }
 
 .light-mode .skill-progress .bg-gray-800 {
-    background-color: #ddd;
+    background-color: #e0daca;
+}
+
+/* More light mode improvements */
+.light-mode #chatbot-panel {
+    background-color: #f9f6ed;
+    border-color: rgba(175, 140, 35, 0.3);
+}
+
+.light-mode #chatbot-messages {
+    background-color: #f5f1e6;
+}
+
+.light-mode .ai-message {
+    background-color: #e9e4d5;
+    color: #333333;
+    border-left: 2px solid var(--gold-primary);
+}
+
+.light-mode #chatbot-input {
+    background-color: #e9e4d5;
+    color: #333333;
+}
+
+.light-mode ::-webkit-scrollbar-track {
+    background: #e9e4d5;
+}
+
+.light-mode .bg-black\/30 {
+    background-color: #e0daca;
 }
 
 /* Advanced Animations Collection */
