@@ -1,80 +1,38 @@
-# Elegant Black & Gold Portfolio Website
+# Portfolio Website
 
-A modern, visually-rich personal portfolio website built with HTML, CSS, Tailwind CSS, and vanilla JavaScript featuring an elegant black and gold color scheme.
+A sleek, responsive portfolio website with a black and gold theme showcasing my skills, projects, and professional information.
 
 ## Features
 
-- ✨ **Luxury Design**: Sleek black and gold theme with elegant animations and transitions
-- 🌙 **Dark/Light Mode**: Toggle between dark and light themes
-- 📱 **Fully Responsive**: Looks great on all devices (mobile, tablet, desktop)
-- 🤖 **AI Chatbot**: Interactive chatbot to engage with visitors
-- 📊 **Skills Showcase**: Visual representation of your technical skills
-- 👨‍💻 **Project Portfolio**: Display your work in an attractive grid layout
-- 📱 **Social Media Links**: Connect visitors to your social profiles
-- ✨ **Custom Animations**: Smooth scroll reveals and hover effects
+- Responsive design that works on all devices
+- Dark mode by default with light mode toggle
+- Dynamic animations and transitions
+- Interactive elements including:
+  - Shape-morphing profile image border
+  - Animated skill progress bars
+  - Typing effect for developer roles
+  - Testimonials carousel
+  - Statistics counters
+  - Parallax scrolling effects
+- AI chatbot assistant
+- Contact form
+- Mobile-friendly navigation
 
-## Getting Started
+## Technologies Used
 
-1. **Clone the repository or download the files**
+- HTML5
+- CSS3 with custom animations
+- JavaScript (ES6+)
+- Tailwind CSS
+- Font Awesome icons
 
-2. **Personalize the content**
-   - Update your name, bio, and profession in `index.html`
-   - Replace the placeholder image with your photo
-   - Add your social media links in the contact section
-   - Customize your skills and projects sections
+## Live Demo
 
-3. **Customize the theme (optional)**
-   - Modify colors in the CSS variables in `css/style.css` to match your personal brand
-   - The main gold color (`--gold-primary`) can be easily changed
+Visit the live site at: [Ahsan's Portfolio](https://ahsan6786.github.io/final/)
 
-4. **Deploy the website**
-   - Upload the files to your web hosting service
-   - Or use GitHub Pages, Netlify, Vercel, etc. for free hosting
+## Contact
 
-## Tech Stack
-
-- **HTML5**: Structure and content
-- **CSS3**: Custom styling and animations
-- **Tailwind CSS**: Utility-first CSS framework
-- **JavaScript**: Interactive elements and functionality
-- **Font Awesome**: Icons for skills and social media
-
-## Customization
-
-### Colors and Theme
-
-You can easily change the gold shade by modifying the CSS variables in `css/style.css`:
-
-```css
-:root {
-    --gold-light: #f7d58b;
-    --gold-primary: #d4af37;
-    --gold-dark: #af8d24;
-    /* ... other variables ... */
-}
-```
-
-### Chatbot
-
-The included chatbot is a simple demo with predefined responses. To integrate with a real AI service like OpenAI:
-
-1. Sign up for an API key at [OpenAI](https://openai.com)
-2. Replace the dummy chatbot response code in `js/main.js` with actual API calls
-
-## Browser Support
-
-The website is compatible with all modern browsers:
-- Chrome
-- Firefox
-- Safari
-- Edge
-
-## License
-
-This project is open source and available under the MIT License.
-
-## Acknowledgements
-
-- [Tailwind CSS](https://tailwindcss.com)
-- [Font Awesome](https://fontawesome.com)
-- [Google Fonts](https://fonts.google.com) 
+Feel free to connect with me:
+- Email: ahsanimamkhan06@gmail.com
+- GitHub: [Ahsan6786](https://github.com/Ahsan6786)
+- LinkedIn: [ahsan-imam-khan-9a0443328](https://www.linkedin.com/in/ahsan-imam-khan-9a0443328) 
