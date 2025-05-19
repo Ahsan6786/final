@@ -4,7 +4,12 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize components
     initThemeToggle();
-    initChatbot();
+    // Use the database-integrated chatbot instead of the regular one
+    if (typeof initChatbotWithDB === 'function') {
+        initChatbotWithDB();
+    } else {
+        initChatbot();
+    }
     initMobileMenu();
     initAnimations();
     initScrollReveal();
@@ -14,6 +19,11 @@ document.addEventListener('DOMContentLoaded', function() {
     initTestimonialsCarousel();
     initSkillProgressAnimation();
     initCounterAnimation();
+    
+    // Initialize contact form with database integration
+    if (typeof initContactForm === 'function') {
+        initContactForm();
+    }
 });
 
 /**

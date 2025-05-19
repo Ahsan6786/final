@@ -1,0 +1,35 @@
+<!-- Contact Section with Dark Theme Design -->
+<section id="contact" class="py-20 bg-black relative overflow-hidden">
+    <div class="container mx-auto px-6 relative z-10 max-w-2xl">
+        <div class="bg-gray-900 rounded-lg p-8 shadow-2xl border border-gold-500/20">
+            <h2 class="text-3xl font-bold mb-8 text-center text-gold-400">Send Message</h2>
+            
+            <form id="contactForm" class="space-y-6">
+                <div class="mb-4">
+                    <label for="name" class="block text-sm font-medium text-gray-400 mb-2">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" 
+                           class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white" required>
+                </div>
+                
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium text-gray-400 mb-2">Your Email</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" 
+                           class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white" required>
+                </div>
+                
+                <div class="mb-6">
+                    <label for="message" class="block text-sm font-medium text-gray-400 mb-2">Your Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="How can I help you?" 
+                              class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-gold-500 text-white resize-none" required></textarea>
+                </div>
+                
+                <button type="submit" 
+                        class="w-full py-3 bg-gradient-to-r from-gold-500 to-gold-600 text-black font-bold rounded-lg hover:shadow-lg transform hover:-translate-y-1 transition duration-300 flex items-center justify-center">
+                    Send Message <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+                
+                <div id="form-status" class="text-center hidden mt-4"></div>
+            </form>
+        </div>
+    </div>
+</section>
